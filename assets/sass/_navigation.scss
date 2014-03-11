@@ -1,0 +1,27 @@
+// Navigation
+.navigation {
+	&__primary {
+		@include margin-trailer(1);
+		text-align: center;
+		&__link {
+			@include padding-leader(0.5);
+			@include type-scale(small);
+			@include type-style(uppercase);
+			@include apply-side-rhythm-border(bottom, 2px, 0.25);
+			@include single-transition(all, .3s);
+			@include margin-trailer(0.5);
+			font-family: $sans-font-family;
+			display: inline-block;
+			color: rgba(white, 0.5);
+			border-color: rgba(white, 0.5);
+			&:hover, &:focus {
+				color: rgba(white, 1);
+				border-color: rgba(white, 0.8);
+			}
+			&:active {
+				color: rgba(white, 0.7);
+				border-color: rgba(white, 0.5);
+			}
+		}	
+	}
+}

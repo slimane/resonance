@@ -1,0 +1,34 @@
+{{!< default}}
+
+
+    {{#foreach posts}}
+
+
+        <article class="article article--primary {{post_class}} {{#if @first}}article--first{{/if}}">
+            <!--<img class="article__hero" src="http://placekitten.com/1120/600">-->
+            <div class="article__container">
+                <header class="article__header">
+                    <h1 class="article__title"><a href="{{url}}">{{{title}}}</a></h1>
+                </header>
+                <aside>
+                    <div class="article__meta">
+                        <div class="article__date">
+                            <time datetime="{{date format="DD-MM-YYYY"}}">{{date published_at timeago="true"}}</time> {{tags prefix="on " separator=", "}}
+                        </div>
+                    </div>
+                </aside>
+                <div class="article__body">
+                    {{content words="0"}}
+                    <p>{{excerpt}}&hellip;</p>
+                </div>
+                <div class="article__morelink">
+                    <a href="{{url}}" class="btn btn--primary btn--small btn--rounded">
+                        Read the full article
+                    </a>
+                </div>
+            </div>
+        </article>
+
+    {{/foreach}}
+
+    {{pagination}}

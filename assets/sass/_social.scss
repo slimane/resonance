@@ -1,0 +1,13 @@
+// Social
+.social {
+	@include apply-side-rhythm-border(top, 3px, 1);
+	@include apply-side-rhythm-border(bottom, 1px, 1);
+	@include margin-trailer(1);
+	border-color: $grey-light;
+	&__title {
+		@include type-scale(base);
+		@include type-style(uppercase);
+		@include margin-trailer(1);
+		font-weight: 200;
+	}
+}

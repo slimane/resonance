@@ -1,0 +1,59 @@
+// Article
+.article {
+	&--primary {
+
+	}
+	&__container {
+		@include padding-trailer(1);
+		@include padding-leader(1);	
+		@include breakpoint($medium-screen) {
+			@include padding-trailer(2);
+			@include padding-leader(2);	
+		}
+	}
+	&__header {
+	}
+	&__title {
+		@include margin-trailer(1);
+	}
+	&__meta {
+		@include margin-trailer(1);
+		color: $grey-darker;
+	}
+	&__date {
+		@include type-scale(small);
+		@include type-style(uppercase);
+		font-weight: 300;
+		font-family: $sans-font-family;
+	}
+	// The post content styles
+	&__body {
+		@include margin-trailer(1);
+		ul {
+			list-style-type: disc;
+		}
+		ul,ol {
+			@include margin-trailer(1);
+			ul, ol {
+				@include margin-trailer(0);
+			}
+			li {
+				li {
+					@include hspace(1, 0);
+				}
+			}
+		}
+		code {
+			@include margin-trailer(1);			
+		}
+		ol {
+			list-style-type: decimal;
+		}
+		p {
+			@include margin-trailer(1);
+		}
+	}
+	&__footer {
+		@include margin-leader(2);
+	}
+}

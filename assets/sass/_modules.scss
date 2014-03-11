@@ -1,0 +1,57 @@
+// Resonance global styles
+.resonance {
+	// Blog logo
+	&__logo {
+		margin: 0 auto;
+		@include margin-trailer(1);
+		width: rem-calc(84);
+		height: rem-calc(84);
+		display: block;
+	}
+
+	// Blog title
+	&__title {
+		@include type-scale(small);
+		@include type-style(uppercase);
+		@include margin-trailer(0.5);
+		text-align: center;
+		color: rgba(white, 0.8);
+		font-weight: 200;
+	}
+
+	// Blog description
+	&__description {
+		@include type-scale(tiny);
+		@include margin-trailer(1);
+		font-family: $sans-font-family;
+		color: rgba(white, 0.5);
+		text-align: center;
+	}
+
+	// Subscribe to blog button
+	&__subscribe {
+		text-align: center;
+		&__link {
+			color: rgba(white, 0.5);
+			&:hover, &:focus {
+				color: rgba(white, 1);
+			}
+			&:active {
+				color: rgba(white, 0.7);
+			}
+		}
+	}
+	// Resonance footer
+	&__footer {
+		@include type-scale(tiny);
+		@include type-style(uppercase);	
+		font-family: $sans-font-family;
+		color: rgba(white, 0.7);
+		a {
+			color: white;
+			&:hover {
+				color: rgba(white, 0.7);	
+			}
+		}
+	}
+}

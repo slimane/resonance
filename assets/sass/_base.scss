@@ -1,0 +1,26 @@
+// Global border-box-sizing
+@include border-box-sizing;
+
+// Establish baseline with the base font size
+@include establish-baseline($base-font-size);
+
+// Page globals
+html, body {
+	padding: 0;
+	margin: 0;
+}
+body {
+	min-width: $body-min-width;
+	font-family: $body-font-family;
+	color: $body-font-color;
+	background: $body-background-color;
+	max-width: rem-calc($xxlarge-screen);
+}
+
+// Images 
+
+img {
+	min-width: 100%;
+	width: 100%;
+	vertical-align: top;
+}

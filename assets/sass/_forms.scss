@@ -1,0 +1,53 @@
+// Forms
+.form {
+	&__label {
+		@extend %t-small;
+		@extend %t-upper;
+		display: block;
+		color: $grey-dark;
+		font-family: $sans-font-family;
+	}
+	&__legend {
+		@include margin-trailer(0.5);
+		@extend %t-upper;
+		display: block;
+		color: $grey-dark;
+	}
+	&__input {
+		@include margin-trailer(0.5);
+		input {
+			@include rhythm-borders(1px, 0.5);
+			border-color: $grey-light;
+			background-color: lighten($grey-light, 10%);
+			display: block;
+			width: 100%;
+		}
+		&--inline {
+			display: inline-block;
+		}
+		&--required {
+			border-color: $alert-color;
+		}
+		&--text {
+
+		}
+		&--number {
+		}
+		&--email {
+		}
+		&--password {
+		}
+		&--checkbox {
+		}
+		&--radio {
+		}
+		&--textarea {
+			textarea {
+				@include rhythm-borders(1px, 0.5);
+				border-color: $grey-light;
+				background-color: lighten($grey-light, 10%);
+				width: 100%;
+			}
+		}
+	}
+}

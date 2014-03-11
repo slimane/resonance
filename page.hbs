@@ -1,0 +1,26 @@
+{{!< default}}
+
+{{#post}}
+<article class="article article--primary {{post_class}}">
+    <!--<img class="article__hero" src="http://placekitten.com/1120/600">-->
+    <div class="article__container">
+        <header class="article__header">
+            <h1 class="article__title"><a href="{{@blog.url}}" title="Go back home!">{{{title}}}</a></h1>
+        </header>
+        <aside>
+            <div class="article__meta">
+                <div class="article__date">
+                    <time datetime="{{date format="DD-MM-YYYY"}}">{{date published_at timeago="true"}}</time> {{tags prefix="on " separator=", "}}
+                </div>
+            </div>
+        </aside>
+        <div class="article__body">
+            {{content}}
+        </div>
+        <footer class="article__footer">
+            {{> social}}
+            {{> author}}    
+        </footer>
+    </div>
+</article>
+{{/post}}

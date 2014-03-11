@@ -1,0 +1,13 @@
+// Ghost classes
+.pagination {
+	@include hspace(2, 2);
+	@include padding-trailer(1);
+	@include padding-leader(1);
+	.page-number {
+		@include type-scale(tiny);
+		@include type-style(uppercase);
+		color: $grey-normal;
+		float: right;
+		font-family: $sans-font-family;
+	}
+}

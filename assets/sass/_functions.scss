@@ -1,0 +1,20 @@
+// Strip units
+@function strip-units($number) {
+	@return $number / ($number * 0 + 1);
+}
+// Simple mixin for creating rem based horizontal paddings and margins
+@mixin hspace($left: 0, $right: 0, $type: padding) {
+	@if $left > 0 {
+		padding-left: $left * strip-units($base-line-height/$base-font-size) * 1rem;
+	}
+	@if $right > 0 {
+		padding-right: $right * strip-units($base-line-height/$base-font-size) * 1rem;
+	}
+}
+
+// Rem calculator 
+
+@function rem-calc($size) {
+	$rem-size: strip-units($size) / strip-units($base-font-size);
+	@return #{$rem-size}rem;
+}

@@ -1,0 +1,41 @@
+.author {
+	@include clearfix;
+	&__image {
+		margin: 0 auto;
+		display: block;
+		width: 30%;
+		@include margin-trailer(1);
+
+		@include breakpoint($small-screen) {
+			@include span(2 of $total-columns);
+		}
+		@include breakpoint($large-screen) {
+			@include span(1 of $total-columns);
+		}
+
+		img {
+			@include border-radius($global-rounded);
+			display: block;
+		}
+	}
+	&__desc {
+		@include breakpoint($small-screen) {
+			@include span(9 omega of $total-columns);
+		}
+		@include breakpoint($large-screen) {
+			@include span(10 omega of $total-columns);
+		}
+		
+	}
+	&__name {
+		@include type-scale(small);
+		@include type-style(uppercase);	
+		@include margin-trailer(0.25);
+		font-family: $sans-font-family;
+		color: $grey-darker;
+	}
+	&__bio {
+		@include type-scale(small);	
+		color: $grey-normal;
+	}
+}

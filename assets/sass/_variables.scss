@@ -1,0 +1,83 @@
+// Colors
+$primary-color: #ae1d38;
+$secondary-color: #666;
+$terciary-color: #999;
+
+$alert-color: red;
+$success-color: green;
+$note-color: yellow;
+$action-color: lime;
+
+$grey-light: darken(white, 15%);
+$grey-normal: darken(white, 30%);
+$grey-darker: darken(white, 60%);
+$grey-dark: darken(white, 90%);
+
+$text-color: #383838;
+
+// Typography
+$sans-font-family: "Lato", Helvetica, Arial, sans-serif;
+$serif-font-family:  Georgia, Times, serif;
+
+$strong-font-weight: 700;
+$regular-font-weight: 400;
+$light-font-weight: 200;
+
+$tiny-font-size: 12px;
+$tiny-font-lines: 0.5;
+$small-font-size: 16px;
+$small-font-lines: 0.75;
+// $base-font-size is already defined
+$base-font-lines: 1;
+$medium-font-size: 26px;
+$medium-font-lines: 1;
+$large-font-size: 36px;
+$large-font-lines: 1.25;
+$xlarge-font-size: 42px;
+$xlarge-font-lines: 1.5;
+$xxlarge-font-size: 56px;
+$xxlarge-font-lines: 2;
+
+$headings-color: $text-color;
+$headings-font-family: $sans-font-family;
+$headings-font-weight: 900;
+
+// Compass Vertical Rhythm (compass-style.org/reference/compass/typography/vertical_rhythm/)
+$base-font-size: 20px; // Global font size
+$base-line-height: 34px; // Global baseline height
+$rhythm-unit: "rem"; // Setting the Rhythm in REM
+$rem-with-px-fallback: false; // No need for px in modern browsers, set to true if older browser support is needed
+
+// Global body styling
+$body-min-width: 320px;
+$body-font-family: $serif-font-family;
+$body-font-size: 100%;
+$body-font-color: $text-color;
+$body-background-color: darken(white, 2%);
+
+// Global radius & rounded
+$global-radius: 3px;
+$global-rounded: 1000px;
+
+// Global Susy settings
+$total-columns: 12;
+$susy: (
+  columns: $total-columns,  // The number of columns in your grid
+  gutters: 1/4, // The size of a gutter in relation to a single column
+);
+
+// Breakpoints
+$tiny-screen: 320px;
+$small-screen: 480px;
+$medium-screen: 768px;
+$large-screen: 1024px;
+$xlarge-screen: 1280px;
+$xxlarge-screen: 1600px;
+
+
+//$tiny-screen: 16em;
+//$small-screen: 24em;
+//$medium-screen: 38.4em;
+//$large-screen: 51.2em;
+//$xlarge-screen: 61em;
+//$xxlarge-screen: 80em;

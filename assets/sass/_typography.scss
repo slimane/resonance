@@ -1,0 +1,227 @@
+// Type-scale mixin
+
+@mixin type-scale($scale) {
+	@if $scale == "tiny" {
+		@include adjust-font-size-to($tiny-font-size, $tiny-font-lines);
+	}
+	@if $scale == "small" {
+		@include adjust-font-size-to($tiny-font-size, $tiny-font-lines);
+		@include breakpoint($medium-screen) {
+			@include adjust-font-size-to($small-font-size, $small-font-lines);
+		}
+	}
+	@if $scale == "base" {
+		@include adjust-font-size-to($small-font-size, $small-font-lines);
+		@include breakpoint($medium-screen) {
+			@include adjust-font-size-to($base-font-size, $base-font-lines);
+		}
+	}
+	@if $scale == "medium" {
+		@include adjust-font-size-to($base-font-size, $base-font-lines);
+		@include breakpoint($medium-screen) {
+			@include adjust-font-size-to($medium-font-size, $medium-font-lines);
+		}
+	}
+	@if $scale == "large" {
+		@include adjust-font-size-to($medium-font-size, $medium-font-lines);
+		@include breakpoint($medium-screen) {
+			@include adjust-font-size-to($large-font-size, $large-font-lines);	
+		}
+	}
+	@if $scale == "xlarge" {
+		@include adjust-font-size-to($large-font-size, $large-font-lines);	
+		@include breakpoint($medium-screen) {
+			@include adjust-font-size-to($xlarge-font-size, $xlarge-font-lines);
+		}
+	}
+	@if $scale == "xxlarge" {
+		@include adjust-font-size-to($xlarge-font-size, $xlarge-font-lines);
+		@include breakpoint($medium-screen) {
+			@include adjust-font-size-to($xxlarge-font-size, $xxlarge-font-lines);
+		}
+	}
+}
+@mixin type-style($style) {
+	@if $style == "uppercase" {
+		text-transform: uppercase;
+		letter-spacing: .3em;
+	}
+}
+%t-tiny {
+	@include type-scale(tiny);
+}
+%t-small {
+	@include type-scale(small);
+}
+%t-base {
+	@include type-scale(base);
+}
+%t-medium {
+	@include type-scale(medium);
+}
+%t-large {
+	@include type-scale(large);
+}
+%t-xlarge {
+	@include type-scale(xlarge);
+}
+%t-xxlarge {
+	@include type-scale(xxlarge);
+}
+
+// Styles as placeholders
+%t-upper {
+	@include type-style(uppercase);
+}
+%t-strong {
+	font-weight: $strong-font-weight;
+}
+
+// Default anchors
+a {
+	@include single-transition(all, .3s);
+	text-decoration: none;
+	outline: 0;
+	color: $primary-color;
+	&:hover, &:focus {
+		color: $secondary-color;
+	}
+	&:active {
+		color: darken($secondary-color, 15%);
+	}
+}
+
+// Default headings
+#{headings(1,6)} {
+	color: $headings-color;
+	font-family: $headings-font-family;
+	font-weight: $headings-font-weight;
+	letter-spacing: -0.02em;
+	margin: 0;
+}
+h1 {
+	@extend %t-xxlarge;
+}
+h2 {
+	@extend %t-xlarge;
+}
+h3 {
+	@extend %t-large;
+}
+h4 {
+	@extend %t-medium;
+}
+h5 {
+	@extend %t-base;
+}
+h6 {
+	@extend %t-base;
+}
+
+// Basic paragraphs 
+p {
+	@include type-scale(base);
+	margin: 0;
+}
+
+// Small fonts
+small {
+	font-size: 80%;
+}
+
+// Lists
+ul, ol, dl {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	list-style-position: inside;
+}
+ul, ol {
+	& > li {
+		@include type-scale(base);
+	}
+}
+dl {
+	& > dd {
+		@include type-scale(base);
+	}
+}
+.list {
+	&--unordered {
+		list-style-type: disc;
+		list-style-position: inside;
+		padding-left: 1rem;
+		text-indent: -1rem;
+	}
+	&--ordered {
+		list-style-type: decimal;
+		list-style-position: inside;
+		padding-left: 1rem;
+		text-indent: -1rem;
+	}
+	&--inline {
+		@include clearfix;
+		.list--inline__item {
+			float: left;
+		}
+	}
+}
+
+// Blockquote
+blockquote {
+	margin: 0;
+	@include margin-trailer(1);
+	display: block;
+	position: relative;
+	
+	& > p {
+		@include type-scale(xlarge);
+		text-align: center;
+		padding: 0;
+		letter-spacing: -0.02em;
+		font-weight: 200;
+		color: $grey-darker;
+	}
+	cite {
+		@extend %t-small;
+		@extend %t-upper;
+		font-family: $sans-font-family;
+		color: $grey-darker;
+		font-style: normal;
+	}
+}
+
+// Horizontal rule
+hr {
+	@include margin-trailer(0.5);
+	@include margin-leader(0.5);
+	border-width: 0;
+	border-top: 1px solid $grey-light;
+}
+
+abbr {}
+del {}
+strong {}
+mark {}
+mark {}
+sub {}
+em {}
+sup {}
+dfn {}
+acronym {}
+address {}
+pre {}
+code {
+	@include type-scale(base);
+	@include padding-trailer(0.5);
+	@include padding-leader(0.5);
+	@include hspace(0.5, 0.5);
+	background: $grey-light;
+	display: block;
+}
+
+
+// Tables
+table {
+
+}
