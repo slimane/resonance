@@ -1,5 +1,5 @@
 # Resonance - a typography based content first responsive theme for Ghost
-Resonance is an open source theme for the [Ghost](http://ghost.org/ "Ghost") blogging platform. 
+Resonance is an open source theme for the [Ghost](http://ghost.org/ "Ghost") blogging platform. The current supported Ghost version is 0.4.1.
 
 View resonance in action [here](http://amlinarev.ghost.io/).
 
@@ -13,4 +13,9 @@ The theme id built with Sass for CSS preprocessoring, Compass for all kinds of C
 
 The project is under development, feel free to report bugs and inconsistencies. It is created and tested on modern browsers. 
 
-The project uses Ruby and Bundler for versioning to Compile the Sass files. Use it with bundle exec compass watch. More info to come. 
+The project uses Ruby and Bundler for versioning to Compile the Sass files. Use it with bundle exec compass watch.
+
+Key features
+- Fully responsive mobile first and fluid layout using relative sizing
+- Resonance is written with BEM syntax using OOP principles for maximum project control and modularity.
+- Written in Sass using Compass, Susy and Breakpoint
