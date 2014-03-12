@@ -25,7 +25,6 @@
 			position: relative;
 			overflow: hidden;
 			background-color: $grey-dark;
-			background-attachment: local;
 			vertical-align: top;
 			
 			width: 100%;
@@ -33,6 +32,9 @@
 			top: rem-calc(59);
 			left: -100%;
 			position: absolute;
+
+			background-attachment: fixed;
+			background-position: top left;
 			
 
 			@include breakpoint($medium-screen) {
@@ -55,10 +57,12 @@
 				width: 100%;
 			}
 			&--push {
-				@include single-transition(left, .3s);
-				display: block;
-				position: absolute;
-				left: 0;
+				@include breakpoint(0 $medium-screen) {
+					@include single-transition(left, .3s);
+					display: block;
+					position: absolute;
+					left: 0;
+				}
 			}
 		}
 		.layout__main {

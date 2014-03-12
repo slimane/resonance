@@ -56,4 +56,13 @@
 	&__footer {
 		@include margin-leader(2);
 	}
+	&__comments {
+		@include margin-leader(2);
+		&__title {
+			@include type-scale(base);
+			@include type-style(uppercase);
+			@include margin-trailer(2);
+			font-weight: 200;
+		}
+	}
 }
